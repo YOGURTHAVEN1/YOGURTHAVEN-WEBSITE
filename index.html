@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/52b9e0d89e.js" crossorigin="anonymous"></script>
+<!--Insert me screaming here-->
+    </head>
+    <body>
+<!--NAVIGATION BAR-->
+        <header>
+            <a href="#" class="brand">YOGURTHAVEN</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#Home">Home</a>
+                    <a href="#About">About Us</a>
+                    <a href="#EXPLORE">Explore</a>
+                    <a href="#">Contacts</a>
+                </div>
+            </div>
+        </header>
+<!--LANDING PAGE why...-->
+<!--LANDING PAGE ID-->
+<section class="home" id="Home">
+<!--LANDING PAGE-->
+            <img class="video-slide active" src="daniel-cabriles-HScwyyp32LM-unsplash.jpg" alt="miquel">
+            <img class="video-slide" src="daniel-cabriles-uTOUS5_guHg-unsplash.jpg" alt="miquel">
+            <img class="video-slide" src="ovidiu-creanga-iNWjJJXeym4-unsplash.jpg" alt="miquel">
+            <div class="content active">
+                <h1>YOGURT<br><span>HAVEN</span></h1>
+                <p>Welcome to Yogurthaven, where indulgence meets excellence in every spoonful. Experience the artistry of yogurt-making with our diverse range of flavors and customizable toppings. Begin your flavorful journey with us!</p>
+                <a href="#">GET STARTED</a>
+            </div>
+            <div class="content">
+                <h1>EXPLORE<br><span>MORE</span></h1>
+                <p>Welcome to Yogurthaven, where indulgence meets excellence in every spoonful. Experience the artistry of yogurt-making with our diverse range of flavors and customizable toppings. Begin your flavorful journey with us</p>
+                <a href="#">GET STARTED</a>
+            </div>
+            <div class="content">
+                <h1>ABOUT<br><span>US</span></h1>
+                <p>Welcome to Yogurthaven, where indulgence meets excellence in every spoonful. Experience the artistry of yogurt-making with our diverse range of flavors and customizable toppings. Begin your flavorful journey with us!</p>
+                <a href="#">GET STARTED</a>
+            </div>
+            <div class="media-icons">
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></i></a>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+            
+        </section>
+
+        <script type="text/javascript">
+            //JAVASCRIPT NAVIGATION MENU//
+            const menuBtn = document.querySelector(".menu-btn");
+            const navigation = document.querySelector(".navigation");
+
+            menuBtn.addEventListener("click", () => {
+                menuBtn.classList.toggle("active");
+                navigation.classList.toggle("active");
+            });
+
+            //JAVASCRIPT SLIDER//
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                
+                });
+
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+                contents[manual].classList.add("active");
+            }
+
+            btns.forEach((btn, i) =>{
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            });
+        </script>
+<!--OUR VIDEOS AND ABOUT US-->
+<!--ABOUT ID-->
+<section class="intro" id="About">
+    <div class="main">
+<!--ABOUT SECTION-->
+        <iframe width="600" height="330" src="https://www.youtube.com/embed/J0r06eO_V_M?si=GBxcdnwoC7nS9l5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="intro-text">
+            <h2>ABOUT US</h2>
+            <h5>What we do</h5>
+            <p>Yogurthaven is a sanctuary for yogurt enthusiasts, where the artistry of yogurt-making unfolds in every velvety spoonful. 
+                With a commitment to artisanal craftsmanship, the shop offers a diverse spectrum of flavors, from timeless classics to imaginative combinations, inviting patrons on a journey of flavor exploration. 
+                Toppings are a tantalizing playground for creativity, allowing customers to customize their treats with an array of fresh fruits, crunchy nuts, and sweet indulgences. 
+                Embracing healthful indulgence, Yogurthaven combines decadence with nutrition through probiotic-rich yogurt options and wholesome toppings. The welcoming family-friendly oasis, coupled with impeccable service, creates an atmosphere of warmth and hospitality. 
+                In a clean and inviting space, Yogurthaven goes beyond being a yogurt shop; it's a destination where the joy of indulgence meets the satisfaction of exceptional service.
+            </p>
+            <button onclick="showVideosModal()">Watch More Videos</button>
+        </div>
+    </div>
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/sw-sr7Vkr84?si=eNpfSPiSYhd9Sxea" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61555974600005%2Fvideos%2F25699571219656912%2F&show_text=false&width=336&t=0" width="336" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function showVideosModal() {
+        document.getElementById("videoModal").style.display = "block";
+    }
+
+    function closeVideoModal() {
+        document.getElementById("videoModal").style.display = "none";
+    }
+
+    // Close the modal if the user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById("videoModal");
+        if (event.target == modal) {
+            closeVideoModal();
+        }
+    }
+</script>
+
+<!--OUR SERVICES-->
+<!--WHAT WE DO ID-->
+<section class="explore" id="EXPLORE">
+    <div class="section">
+<!--WHAT WE DO-->
+<div class="title">
+    <h1>OUR SERVICES</h1>
+</div>
+<div class="services">
+    <!-- Each card includes a modal that will display upon clicking "Read More" -->
+    <div class="card">
+        <div class="icon">
+            <i class="fa-solid fa-ice-cream"></i>
+        </div>
+        <h2>LOTS OF TOPPINGS</h2>
+        <p>Elevate your yogurt experience by customizing each spoonful with a variety of delicious options for a delightful adventure.</p>
+        <button class="button" onclick="openModal('modal1')">READ MORE</button>
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>More on Toppings</h2>
+                <p>Our range of toppings includes everything from fresh fruits and nuts to decadent chocolate chips and exotic syrups. Each topping is carefully selected to complement our yogurt flavors, ensuring that you can craft not just a dish, but an experience. Choose from over 30 toppings to make every bowl uniquely yours!</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="icon">
+            <i class="fa-solid fa-store"></i>
+        </div>
+        <h2>LOTS OF STORES</h2>
+        <p>Discover your perfect yogurt delight at our stores, where a wide range of classic and exotic flavors, along with customizable toppings, invites</p>
+        <button class="button" onclick="openModal('modal2')">READ MORE</button>
+        <div class="modal" id="modal2">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>More on Stores</h2>
+                <p>Step into any of our multiple locations across the country and enjoy a welcoming atmosphere perfect for all yogurt lovers. Our stores are designed to offer a relaxing environment where you can enjoy your customized yogurt bowl. Each location provides a unique experience with local flavors and specialties, ensuring there's always something new to discover.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="icon">
+            <i class="fa-solid fa-truck"></i>
+        </div>
+        <h2>FAST DELIVERIES</h2>
+        <p>Enjoy fast, convenient yogurt delivery right to your doorstep, satisfying your cravings with quality and speed anytime, anywhere.</p>
+        <button class="button" onclick="openModal('modal3')">READ MORE</button>
+        <div class="modal" id="modal3">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>More on Deliveries</h2>
+                <p>Our delivery service is designed to bring your favorite yogurt bowls to your door swiftly and efficiently. We use advanced logistics and technology to ensure that your order arrives fresh and delicious. Whether you're at home, work, or even in a park, we've got you covered with fast delivery times that you can count on.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+    <script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+    </script>
+
+<!--TESTIMONIAL ID-->
+<section class="testimonials">
+    <div class="hero">
+<!--TESTIMONIAL PAGE-->
+
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 1 Image">
+                <p>"Yogurthaven has truly perfected the art of yogurt making. The flavors are rich and the texture is incredibly creamy.
+                    <br>
+                    I've never tasted yogurt so velvety smooth. 
+                    <br>
+                    The wide variety of toppings adds the perfect touch to this delightful treat! Highly recommended."</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 2 Image">
+                <p>"As someone who is health-conscious, Yogurthaven is my go-to place for a guilt-free indulgence. 
+                    <br>
+                    The range of healthy toppings and probiotic-rich yogurt options make it easy to satisfy my sweet cravings while still nourishing my body. 
+                    <br>
+                    A fantastic balance between taste and nutrition."</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 3 Image">
+                <p>"Yogurthaven constantly surprises me with their innovative flavors.
+                    <br>
+                    From classic favorites to adventurous combinations, each visit is a flavor journey. 
+                    <br>
+                    The quality is unmatched, and I love trying something new every time I stop by. Absolutely the best yogurt spot in town!"</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+            
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 4 Image">
+                <p>"Yogurthaven has become our family's favorite spot. 
+                    <br>
+                    The warm and inviting atmosphere, coupled with friendly staff, makes it a joy to visit. 
+                    <br>
+                    The kids love creating their yogurt masterpieces, and we appreciate the wholesome options available. A true family-friendly gem."</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 5 Image">
+                <p>"For those with a sweet tooth like me, Yogurthaven is a game-changer. 
+                    <br>
+                    The sweetness of their yogurt paired with endless topping choices satisfies my dessert cravings without the guilt. 
+                    <br>
+                    It's become a regular part of my routine – a guilt-free indulgence that's hard to resist!"</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 6 Image">
+                <p>"The staff at Yogurthaven goes above and beyond to ensure a positive experience. 
+                    <br>
+                    They are knowledgeable about their products, patient with choices, and always deliver with a smile. 
+                    <br> 
+                    The excellent customer service adds an extra layer of enjoyment to the delicious yogurt."</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+
+            <div class="testimonial">
+                <img src="default profile.jpg" alt="User 7 Image">
+                <p>"Yogurthaven not only serves fantastic yogurt but also provides a clean and inviting space. 
+                    <br>
+                    Whether I'm grabbing a quick treat or settling in for a relaxing moment, the ambiance enhances the overall experience. 
+                    <br>
+                    Cleanliness, coupled with quality, makes it a top choice."</p>
+                <h5>User</h5>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                  </div>
+            </div>
+
+
+        <!-- Testimonial Menu Button -->
+        <div id="testimonial-menu" class="testimonial-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <!-- Testimonial Modal -->
+        <div id="testimonial-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeTestimonialModal()">&times;</span>
+                <div class="image-gallery">
+                    <div class="image-item">
+                        <img src="Screenshot 2024-05-07 055230.png" alt="Image 1">
+                        <p>ANALYTICS OF OUR FIRST VIDEO</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="Screenshot 2024-05-07 141813.png" alt="Image 2">
+                        <p>ANALYTICS OF OUR SECOND VIDEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonial Navigation Controls -->
+        <div class="testimonial-navigation">
+            <div id="prev" onclick="changeTestimonial(-1)">‹</div>
+            <div id="next" onclick="changeTestimonial(1)">›</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // JavaScript for navigating testimonials
+    window.onload = function() {
+        var testimonials = document.querySelectorAll('.testimonial');
+        var currentTestimonial = 0;
+        if (testimonials.length > 0) {
+            testimonials[0].style.display = 'block';
+        }
+
+        window.changeTestimonial = function(direction) {
+            testimonials[currentTestimonial].style.display = 'none';
+            currentTestimonial += direction;
+            if (currentTestimonial >= testimonials.length) {
+                currentTestimonial = 0;
+            } else if (currentTestimonial < 0) {
+                currentTestimonial = testimonials.length - 1;
+            }
+            testimonials[currentTestimonial].style.display = 'block';
+        }
+
+        var prevButton = document.getElementById('prev');
+        var nextButton = document.getElementById('next');
+
+        prevButton.addEventListener('click', function() {
+            changeTestimonial(-1);
+        });
+
+        nextButton.addEventListener('click', function() {
+            changeTestimonial(1);
+        });
+    };
+
+    // JavaScript for Testimonial Menu and Modal
+    document.getElementById('testimonial-menu').addEventListener('click', function() {
+        document.getElementById('testimonial-modal').style.display = 'block';
+    });
+
+    function closeTestimonialModal() {
+        document.getElementById('testimonial-modal').style.display = 'none';
+    }
+
+    // Close modal if user clicks outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById('testimonial-modal');
+        if (event.target == modal) {
+            closeTestimonialModal();
+        }
+    }
+</script>
+    
+
+        </div>
+    </div>
+</section>
+
+<!--FAQ-->
+
+<!-- FAQ Floating Button -->
+<div id="faq-button" class="faq-circle">
+    <i class="fa-solid fa-question"></i>
+</div>
+
+<!-- FAQ Floating Button -->
+<div id="faq-button" class="faq-floating-button">
+    <i class="fas fa-question"></i>
+</div>
+
+<!-- FAQ Modal -->
+<div id="faq-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>FAQs</h2>
+        <p><strong>Q: What is Yogurthaven?</strong><br>A: Yogurthaven is a sanctuary for yogurt enthusiasts, offering a diverse spectrum of flavors and toppings.</p>
+        <p><strong>Q: How can I order?</strong><br>A: You can order both in-store or online through our website.</p>
+        <p><strong>Q: Do you offer delivery?</strong><br>A: Yes, we offer fast delivery services for your convenience.</p>
+    </div>
+</div>
+
+
+
+<script>
+    function toggleFaqModal() {
+        var modal = document.getElementById("faq-modal");
+        modal.style.display = (modal.style.display === "block" ? "none" : "block");
+    }
+    
+    document.getElementById("faq-button").addEventListener("click", function() {
+        toggleFaqModal();
+    });
+    
+    window.onclick = function(event) {
+        var modal = document.getElementById("faq-modal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<!--CREDITS-->
+
+<!--CREDITS ID-->
+<section class="credits" id="credits">
+    <div class="container">
+        <!--CREDITS AND CONTACTS BANNER-->
+        <div class="credits-contacts">
+            <h1><span class="fiery-text">CREDITS:</span></h1>
+            <p>Design by:
+                <BR>
+                NARA GABRIEL JUMAQUIO
+                <br>
+                ADAM CZARIELLE CADAG
+                <br>
+                SARAH ALLISON DE LUNA
+                <br>
+                JOHN LAWRENCE DAWA
+                <br>
+                ATHENA SEAN IBRA
+            </p>
+            <BR>
+            <p>Development by:
+                <BR>
+                NARA GABRIEL JUMAQUIO
+            </p>
+        </div>
+        <BR>
+        <div class="contacts-bar">
+            <p>Email: <a href="mailto:yogurthaven@gmail.com">yogurthaven@gmail.com</a></p>
+        </div>
+        <div class="all-rights-reserved">
+            <p>&copy; 2023 Yogurthaven. All rights reserved.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+    </body>
+</html>
